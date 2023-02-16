@@ -1,0 +1,196 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- 主机: localhost
+-- 生成日期: 2019 年 05 月 27 日 06:38
+-- 服务器版本: 5.0.51
+-- PHP 版本: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- 数据库: `sxydb`
+-- 
+CREATE DATABASE `sxydb` DEFAULT CHARACTER SET gb2312 COLLATE gb2312_chinese_ci;
+USE `sxydb`;
+
+-- --------------------------------------------------------
+
+-- 
+-- 表的结构 `choice`
+-- 
+
+CREATE TABLE `choice` (
+  `cid` int(11) NOT NULL auto_increment,
+  `qid` int(11) NOT NULL,
+  `ccontent` varchar(50) NOT NULL,
+  `amount` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`cid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=gb2312 AUTO_INCREMENT=11 ;
+
+-- 
+-- 导出表中的数据 `choice`
+-- 
+
+INSERT INTO `choice` VALUES (1, 1, '非常好', 1);
+INSERT INTO `choice` VALUES (2, 1, '还可以', 1);
+INSERT INTO `choice` VALUES (3, 1, '一般吧', 1);
+INSERT INTO `choice` VALUES (4, 1, '不喜欢', 0);
+INSERT INTO `choice` VALUES (5, 2, '苹果', 4);
+INSERT INTO `choice` VALUES (6, 2, '梨子', 2);
+INSERT INTO `choice` VALUES (7, 2, '香蕉', 1);
+INSERT INTO `choice` VALUES (8, 2, '草莓', 1);
+INSERT INTO `choice` VALUES (9, 2, '榴莲', 0);
+INSERT INTO `choice` VALUES (10, 2, '柠檬', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- 表的结构 `news`
+-- 
+
+CREATE TABLE `news` (
+  `newsid` int(11) NOT NULL auto_increment,
+  `newscategoryid` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `pubtime` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  `hits` int(11) NOT NULL default '0',
+  `content` longtext NOT NULL,
+  PRIMARY KEY  (`newsid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=gb2312 AUTO_INCREMENT=24 ;
+
+-- 
+-- 导出表中的数据 `news`
+-- 
+
+INSERT INTO `news` VALUES (1, 1, '公司新闻标题1', 'shenxiangyu', '2018-03-26 12:00:22', 1, '公司新闻内容1');
+INSERT INTO `news` VALUES (2, 1, '公司新闻标题2', 'shenxiangyu', '2018-03-26 12:00:23', 2, '公司新闻内容2');
+INSERT INTO `news` VALUES (3, 2, '促销信息标题1', 'shenxiangyu', '2018-03-26 12:01:43', 3, '促销信息内容1');
+INSERT INTO `news` VALUES (4, 2, '促销信息标题2', 'shenxiangyu', '2018-03-26 12:01:44', 4, '促销信息内容2');
+INSERT INTO `news` VALUES (5, 1, '公司新闻标题3', 'shenxiangyu', '2018-03-27 12:00:22', 5, '公司新闻内容3');
+INSERT INTO `news` VALUES (6, 1, '公司新闻标题4', 'shenxiangyu', '2018-03-28 12:00:22', 6, '公司新闻内容4');
+INSERT INTO `news` VALUES (7, 1, '公司新闻标题5', 'shenxiangyu', '2018-03-29 12:00:22', 7, '公司新闻内容5');
+INSERT INTO `news` VALUES (8, 1, '公司新闻标题6', 'shenxiangyu', '2018-03-30 12:00:22', 8, '公司新闻内容6');
+INSERT INTO `news` VALUES (9, 1, '公司新闻标题7', 'shenxiangyu', '2018-03-31 12:00:22', 9, '公司新闻内容7');
+INSERT INTO `news` VALUES (10, 1, '公司新闻标题8', 'shenxiangyu', '2018-04-01 12:00:22', 10, '公司新闻内容8');
+INSERT INTO `news` VALUES (11, 1, '公司新闻标题9', 'shenxiangyu', '2018-04-02 12:00:22', 11, '公司新闻内容9');
+INSERT INTO `news` VALUES (12, 1, '公司新闻标题10', 'shenxiangyu', '2018-04-03 12:00:22', 12, '公司新闻内容10');
+INSERT INTO `news` VALUES (13, 1, '公司新闻标题11', 'shenxiangyu', '2018-04-04 12:00:22', 13, '公司新闻内容13');
+INSERT INTO `news` VALUES (14, 2, '促销信息标题3', 'shenxiangyu', '2018-04-27 12:01:43', 14, '促销信息内容3');
+INSERT INTO `news` VALUES (15, 2, '促销信息标题4', 'shenxiangyu', '2018-04-28 12:01:43', 15, '促销信息内容4');
+INSERT INTO `news` VALUES (16, 2, '促销信息标题5', 'shenxiangyu', '2018-04-29 12:01:43', 16, '促销信息内容5');
+INSERT INTO `news` VALUES (17, 2, '促销信息标题6', 'shenxiangyu', '2018-04-30 12:01:43', 17, '促销信息内容6');
+INSERT INTO `news` VALUES (18, 2, '促销信息标题7', 'shenxiangyu', '2018-04-30 13:01:43', 18, '促销信息内容7');
+INSERT INTO `news` VALUES (19, 2, '促销信息标题8', 'shenxiangyu', '2018-05-01 12:01:43', 19, '促销信息内容8');
+INSERT INTO `news` VALUES (20, 2, '促销信息标题9', 'shenxiangyu', '2018-05-02 12:01:43', 20, '促销信息内容9');
+INSERT INTO `news` VALUES (21, 2, '促销信息标题10', 'shenxiangyu', '2018-05-03 12:01:43', 21, '促销信息内容10');
+INSERT INTO `news` VALUES (22, 2, '促销信息标题11', 'shenxiangyu', '2018-05-04 12:01:43', 22, '促销信息内容11');
+INSERT INTO `news` VALUES (23, 2, '促销信息测试1', 'shenxiangyu', '2019-05-27 14:09:21', 2, '<p style="text-align:center;">\r\n	这里是促销信息。\r\n</p>\r\n<p style="text-align:center;">\r\n	<img src="/editor/attached/image/20190527/20190527060908_14309.jpg" alt="" /> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	总结。。。\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p style="text-align:center;">\r\n	<img src="/editor/attached/image/20190527/20190527061114_47213.jpg" alt="" />\r\n</p>');
+
+-- --------------------------------------------------------
+
+-- 
+-- 表的结构 `newscategory`
+-- 
+
+CREATE TABLE `newscategory` (
+  `newscategoryid` int(11) NOT NULL auto_increment,
+  `newscategory` varchar(50) NOT NULL,
+  `hidden` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`newscategoryid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=gb2312 AUTO_INCREMENT=4 ;
+
+-- 
+-- 导出表中的数据 `newscategory`
+-- 
+
+INSERT INTO `newscategory` VALUES (1, '公司新闻', 0);
+INSERT INTO `newscategory` VALUES (2, '促销信息', 0);
+INSERT INTO `newscategory` VALUES (3, '通知公告', 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- 表的结构 `question`
+-- 
+
+CREATE TABLE `question` (
+  `qid` int(11) NOT NULL auto_increment,
+  `qcontent` varchar(50) NOT NULL,
+  `hidden` tinyint(4) NOT NULL default '0',
+  `multi` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`qid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=gb2312 AUTO_INCREMENT=3 ;
+
+-- 
+-- 导出表中的数据 `question`
+-- 
+
+INSERT INTO `question` VALUES (1, '你对本网站的印象如何？', 0, 0);
+INSERT INTO `question` VALUES (2, '你喜欢的水果是什么？', 0, 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- 表的结构 `user`
+-- 
+
+CREATE TABLE `user` (
+  `userid` int(11) NOT NULL auto_increment,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `truename` varchar(50) NOT NULL,
+  `sex` varchar(50) NOT NULL,
+  `birthday` date NOT NULL,
+  `qq` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `headimage` varchar(50) NOT NULL,
+  `introduce` longtext NOT NULL,
+  `question1` varchar(50) NOT NULL,
+  `answer1` varchar(50) NOT NULL,
+  `question2` varchar(50) NOT NULL,
+  `answer2` varchar(50) NOT NULL,
+  `po` int(11) NOT NULL default '2',
+  PRIMARY KEY  (`userid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=gb2312 AUTO_INCREMENT=35 ;
+
+-- 
+-- 导出表中的数据 `user`
+-- 
+
+INSERT INTO `user` VALUES (1, 'shenxiangyu', '7412b5da7be0cf42', '沈翔宇', '男', '1981-02-05', '11223344', 'sxy@hotmail.com', 'images/headimage/1.jpg', '我是管理员。', '你爸爸的名字是？', '沈爸爸', '你妈妈的名字是？', '沈妈妈', 1);
+INSERT INTO `user` VALUES (2, 'wujunjie', '1234561', '吴俊杰2', '女', '1983-03-03', '15566249024', 'wjj@qq.com5', 'images/headimage/2.jpg', '我是吴俊杰。7', '你喜欢的饮料是？', '馄饨8', '你喜欢的食物是？', '可乐9', 2);
+INSERT INTO `user` VALUES (3, '张mao', '123123', '张茂', '男', '2019-01-01', '123123123', '123123@123123', 'images/headimage/22.jpg', '123', '你爸爸的名字是？', '会', '你妈妈的名字是？', '快', 2);
+INSERT INTO `user` VALUES (4, '刷到18级青冈影', '111111', '钱宇星', '男', '2019-01-01', '123456789', '123@laosiji.com', 'images/headimage/1.jpg', '老司机牛逼', '你爸爸的名字是？', '老司机 ', '你妈妈的名字是？', '牛逼', 2);
+INSERT INTO `user` VALUES (5, 'zhagaga', '123456', '翟佳佳', '女', '2019-01-01', '123465', 'df@', 'images/headimage/3.jpg', 'iyussin', '你爸爸的名字是？', '滚', '你妈妈的名字是？', '当然', 2);
+INSERT INTO `user` VALUES (6, 'chenbinglin', '123456', '陈炳麟', '男', '2019-01-01', '123', '123@', 'images/headimage/17.jpg', '个人简介暂时为空', '你爸爸的名字是？', '不', '你妈妈的名字是？', '不', 2);
+INSERT INTO `user` VALUES (7, 'liuruijun', '123456', '刘蕊军', '男', '2018-03-31', '125468', '14561512@', 'images/headimage/13.jpg', 'zhagagachougoushi', '你爸爸的名字是？', 'gun', '你妈妈的名字是？', 'gun', 2);
+INSERT INTO `user` VALUES (8, '徐锦阳', '123456', '徐锦阳', '男', '2000-08-22', '2821552079', '123456@qq.com', 'images/headimage/20.jpg', '0000', '你爸爸的名字是？', '123', '你妈妈的名字是？', '123', 2);
+INSERT INTO `user` VALUES (9, '谭雅?冯?德古雷查夫', '123456789', '林彬', '男', '2000-02-27', '1571803983', '1571803983@qq.com', 'images/headimage/3.jpg', '第三帝国的ACE就是我啦！！！', '你爸爸的名字是？', '会', '你妈妈的名字是？', '敲及快', 2);
+INSERT INTO `user` VALUES (10, 'ride or die', '123456', '强泳超', '男', '2000-08-22', '1010019124', '1010019124@qq.com', 'images/headimage/23.jpg', 'delalalalalalala', '你爸爸的名字是？', '不会', '你妈妈的名字是？', '不快', 2);
+INSERT INTO `user` VALUES (11, 'zhangyu', '123456', '张渝', '女', '2000-10-26', '2865176652', '2865176652@qq.com', 'images/headimage/18.jpg', 'zhangyu', '你爸爸的名字是？', '可能', '你妈妈的名字是？', '不知道', 2);
+INSERT INTO `user` VALUES (12, 'New Century', '987654321', '季世欣', '女', '2000-01-13', '1428635058', '1428635058@qq.com', 'images/headimage/10.jpg', 'freedom!', '你爸爸的名字是？', '你猜', '你妈妈的名字是？', '永无止境', 2);
+INSERT INTO `user` VALUES (13, '三天之内杀了你', '123123', '李康', '男', '2000-02-08', '155446787', '@65678', 'images/headimage/3.jpg', '骨灰给你扬了！！！', '你爸爸的名字是？', '对对对', '你妈妈的名字是？', '对对对', 2);
+INSERT INTO `user` VALUES (14, '孙笑川的亲生父亲', '19990517', '李正昊', '男', '1999-08-31', '376537588', '376537588@qq.com', 'images/headimage/3.jpg', '我是孙笑川亲生父亲', '你爸爸的名字是？', '快', '你妈妈的名字是？', '会', 2);
+INSERT INTO `user` VALUES (15, '北斗玉衡', '123456', '谢亦宁', '女', '1999-11-29', '1031530311', '1031530311@qq.com', 'images/headimage/2.jpg', '2333', '你爸爸的名字是？', '你猜', '你妈妈的名字是？', '光速飞行', 2);
+INSERT INTO `user` VALUES (16, 'Fairy', '524623', '黄淳', '女', '2000-05-24', '508761671', 'fairy@.com', 'images/headimage/5.jpg', '我同桌是宇宙无敌大可爱', '你爸爸的名字是？', '会', '你妈妈的名字是？', '快', 2);
+INSERT INTO `user` VALUES (17, '龙胆尊', '7777777', '聂文龙', '男', '2000-03-19', '2302757022', '2302757022@qq.com', 'images/headimage/23.jpg', '龙胆尊DA☆YOO~', '你爸爸的名字是？', '不会', '你妈妈的名字是？', '不快', 2);
+INSERT INTO `user` VALUES (18, 'wyunaaaaaaa', '123456', '许文婷', '女', '1997-09-01', '19970901', '19970901@', 'images/headimage/7.jpg', '741852963', '你爸爸的名字是？', '1', '你妈妈的名字是？', '19970901', 2);
+INSERT INTO `user` VALUES (19, 'jiangyaqian', '19991102', '江雅倩', '女', '1999-11-02', '2252791752', '2252791752@qq.com', 'images/headimage/3.jpg', '我的同桌是小仙女！', '你爸爸的名字是？', '会', '你妈妈的名字是？', '快', 2);
+INSERT INTO `user` VALUES (20, 'zhuqianlan', '123456', '朱茜岚', '女', '1999-11-23', '1537461234', 'asdfasd@zql.com', 'images/headimage/3.jpg', '仙女', '你爸爸的名字是？', '会', '你妈妈的名字是？', '恩', 2);
+INSERT INTO `user` VALUES (21, 'zhanghao', 'yh009116', '张昊', '男', '2000-09-11', '2533143127', '2533143127@qq.com', 'images/headimage/20.jpg', '春风十里不如柒！', '你爸爸的名字是？', 'I can', '你妈妈的名字是？', 'I am the Bbarry Allen', 2);
+INSERT INTO `user` VALUES (22, 'ThreeDaysKiller', '123456', '周阳', '男', '1963-02-04', '123456', '123456@', 'images/headimage/29.jpg', 'kill you in three days', '你爸爸的名字是？', '时速五马赫', '你妈妈的名字是？', '恩', 2);
+INSERT INTO `user` VALUES (23, '倪碧思', '123123', '何金泽', '男', '2019-01-01', '1666666', '@', 'images/headimage/30.jpg', '伞舔肢内倪碧思', '你爸爸的名字是？', 'nbs', '你妈妈的名字是？', 'nbs', 2);
+INSERT INTO `user` VALUES (24, 'KUAILE789', '123456', '郭磊', '男', '1998-12-09', '1135523481', '1135523481@qq.com', 'images/headimage/22.jpg', '跟我一起打Rainbow six', '你爸爸的名字是？', '8会', '你妈妈的名字是？', '8快', 2);
+INSERT INTO `user` VALUES (25, '我是桐人就好了', '63246324', '衡家扬', '男', '2006-04-05', '2442609020', '2442609020@qq.com', 'images/headimage/2.jpg', '嚯嚯三天之内', '你爸爸的名字是？', '你猜', '你妈妈的名字是？', '不知道', 2);
+INSERT INTO `user` VALUES (26, 'outmanbbsimy', '123456', '翟佳佳', '女', '2019-01-01', '789', '456@', 'images/headimage/3.jpg', 'yusiwenwo e zi', '你爸爸的名字是？', '当然', '你妈妈的名字是？', '当然', 2);
+INSERT INTO `user` VALUES (27, 'yusiwen', '123456', '于思文', '男', '2019-06-06', '2543255', '2523@', 'images/headimage/13.jpg', 'rdsf', '你爸爸的名字是？', 'fdf', '你妈妈的名字是？', 'fdsfa', 2);
+INSERT INTO `user` VALUES (28, 'luojiayi', '111111', '骆佳怡', '女', '2019-01-01', '1122345', '1123@tony.com', 'images/headimage/1.jpg', '略略略~', '你爸爸的名字是？', '飞', '你妈妈的名字是？', '慢', 2);
+INSERT INTO `user` VALUES (29, 'FFsexy', 'fjt123456', '范金涛', '男', '2000-02-10', '807780241', '807780241@qq.com', 'images/headimage/30.jpg', '液', '你爸爸的名字是？', '你看天上的是什么？', '你妈妈的名字是？', 'JOJO立', 2);
+INSERT INTO `user` VALUES (30, 'yanchengzhan', '123456', '严承展', '男', '2000-08-27', '819362959', '819362959@qq.com', 'images/headimage/26.jpg', '这是什么问题啊2333', '你爸爸的名字是？', '会', '你妈妈的名字是？', '快', 2);
+INSERT INTO `user` VALUES (31, '磊磊磊磊磊磊', '123123', '郭磊', '男', '1998-11-13', '1', '1654165@', 'images/headimage/16.jpg', '(*^__^*) ', '你爸爸的名字是？', '快', '你妈妈的名字是？', '8', 2);
+INSERT INTO `user` VALUES (32, '我单推傻葵谢拉蝙蝠妹尊妈阿夸夏哥犬山哥', '123456', '姚景然', '女', '1999-01-01', '123456', '123@', 'images/headimage/4.jpg', '朋友你知道战舰少女R吗？', '你爸爸的名字是？', '会', '你妈妈的名字是？', '快', 2);
+INSERT INTO `user` VALUES (33, 'wangxin', 'wx123+++', '王鑫', '男', '2019-01-01', '125', '123@qq.com', 'images/headimage/13.jpg', '双方都', '你爸爸的名字是？', '会', '你妈妈的名字是？', '1', 2);
+INSERT INTO `user` VALUES (34, 'shenxiangyu2', '7412b5da7be0cf42', '沈翔宇2', '男', '1991-01-01', '112233', '1122@3344', 'images/headimage/3.jpg', '我是MD5测试员', '你爸爸的名字是？', 'md5', '你妈妈的名字是？', 'md6', 2);
